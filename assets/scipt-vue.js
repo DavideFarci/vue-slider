@@ -58,7 +58,6 @@ const app = Vue.createApp({
             }
         },
         currentImage(index) {
-            console.log("cliccato la miniatura in posizione " + index);
             this.activeIndex = index;
         }
     },
