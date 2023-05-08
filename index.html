@@ -41,10 +41,17 @@
                 :src="imageThumb.image" 
                 :alt="imageThumb.title" 
                 class="{active: index == activeIndex}"
+                @click="currentImage(index)"
                 >
                 <div class="controls d-flex flex-column justify-content-between">
-                    <i class="bi bi-arrow-up-circle-fill btn btn-up text-light"></i>
-                    <i class="bi bi-arrow-down-circle-fill btn btn-down text-light"></i>
+                    <i 
+                        class="bi bi-arrow-up-circle-fill btn btn-up text-light"
+                        @click="prevImage"
+                    ></i>
+                    <i 
+                        class="bi bi-arrow-down-circle-fill btn btn-down text-light"
+                        @click="nextImage"
+                    ></i>
                 </div>
             </div>
         </div>
