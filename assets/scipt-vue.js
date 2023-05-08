@@ -61,6 +61,14 @@ const app = Vue.createApp({
             this.activeIndex = index;
         }
     },
+    created() {
+        setInterval(() => {
+            this.activeIndex++;
+            if (this.activeIndex >= this.images.length) {
+                this.activeIndex = 0;
+            }
+        }, 3000);
+    }
 });
 
 app.mount(".carousel");
