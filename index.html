@@ -21,7 +21,11 @@
     <div class="container">
         <div class="carousel d-flex">
             <!-- div immagini -->
-            <div class="highlighted">
+            <div 
+            class="highlighted"
+            @mouseover="stopAutorun"
+            @mouseleave="playAutorun"
+            >
                 <button type="button" class="btn btn-warning reversed_btn">Reversed</button>
                 <div 
                     v-for="(imageContainer, index) in images" 
@@ -35,7 +39,11 @@
             </div>
     
             <!-- div con le miniature -->
-            <div class="thumbs d-flex flex-column">
+            <div 
+            class="thumbs d-flex flex-column"
+            @mouseover="stopAutorun"
+            @mouseleave="playAutorun"
+            >
                 <img 
                 v-for="(imageThumb, index) in images"
                 :src="imageThumb.image" 

@@ -15,6 +15,8 @@ const app = Vue.createApp({
     data() {
         return {
             activeIndex: 0,
+            isAutorun: false,
+            interval: setInterval(this.nextImage, 3000),
             images: [
                 {
                     image: `assets/img/01.webp`,
@@ -59,15 +61,17 @@ const app = Vue.createApp({
         },
         currentImage(index) {
             this.activeIndex = index;
-        }
+        },
+        playAutorun() {
+            this.interval = setInterval(this.nextImage, 3000);
+        },
+        stopAutorun() {
+            console.log('attraversato il bordo');
+            clearInterval(this.interval);
+        },
     },
     created() {
-        setInterval(() => {
-            this.activeIndex++;
-            if (this.activeIndex >= this.images.length) {
-                this.activeIndex = 0;
-            }
-        }, 3000);
+        this.interval;
     }
 });
 
